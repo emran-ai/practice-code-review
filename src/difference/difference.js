@@ -6,5 +6,13 @@
  */
 
 export function RemoveValue(array, value) {
-  return array.filter((item) => !value.includes(item));
+  const uniqueArray = [];
+
+  for (const item of array) {
+    if (!value.includes(item) && !uniqueArray.includes(item)) {
+      uniqueArray.push(item);
+    }
+  }
+
+  return uniqueArray;
 }
